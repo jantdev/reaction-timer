@@ -1,5 +1,5 @@
 <template>
-<button @click="start" :disabled="isPlaying">Start</button>
+<button @click="start" :disabled="isPlaying" class="btn_start">Start</button>
 <Block v-if="isPlaying" :delay="delay" @result="results" />
 <Result :time="time" v-if="showResult"/>
 </template>
@@ -48,5 +48,20 @@ body{
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.btn_start{
+  background:#0faf87;
+  color:#fff;
+  border:none;
+  padding:8px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin:10px
+}
+.btn_start:disabled{
+  opacity: 0.2;
+  cursor:not-allowed;
 }
 </style>
